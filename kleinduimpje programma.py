@@ -2,6 +2,24 @@ def inputcheck(inp, keuzes):
     if inp in keuzes:
         return keuzes[inp]
     
+staat = inputcheck(keuze, dictio["staat1"]["choices"])
+
+while True: 
+    print(dictio[staat])
+    for i in dictio[staat]["choices"]:
+        print(i)
+    keuze = input("Waar wil je heen?")
+    if keuze == "bes" or keuze == "raam" or keuze == "deur" or keuze == "rondlopen":
+        break
+
+richting = None
+opties ={"brood","blaadjes","niks", "blijven zitten en wachten", "spoor terug volgen", "je spoor terug volgen", "opzoek naar mensen", "terug lopen naar waar je vandaan kwam", "je klopt aan bij het huis", "je loopt verder", "eet de bes", "eet de bes niet", "rond lopen", "naar het huisje", "door het raam", "door de deur"}
+while richting == None:
+    richting = input("Waar ga je heen?").lower
+    if richting not in opties:
+        richting None
+print(richting)
+    
 dictio = {
     "begin":{
     "text": """Kleinduimpje woont samen met zijn broertjes in het bos. Omdat er te weinig eten is thuis, worden ze in het bos achtergelaten. Kleinduimpje heeft gelukkig witte steentjes in zijn zak zitten die hij op de route achterlaat waardoor hij weer terug komt. Ze komen terug thuis, maar hun ouders willen hen weg hebben dus brengt de vader ze nog een keer weg. 
@@ -13,10 +31,10 @@ Je wordt weg gebracht naar het midden van het bos. Neem je iets mee? Keuzes: bro
         }},
     
     "brood stukjes": {
-    "text": """Je scheurt stukjes brood af terwijl je aan het lopen bent, ze vallen op de grond als een soort route. Je komt in het midden van het bos aan. Het is donker en je kunt niet ver zien. Je vader zegt dat hij even iets gaat halen en dat jullie hier moeten blijven. Jullie gaan zitten op de grond en wachten even. Je vader lijkt niet terug te komen, wat doe je? Keuzes: blijven zitten en wachten, je spoor proberen te volgen terug. """,
+    "text": """Je scheurt stukjes brood af terwijl je aan het lopen bent, ze vallen op de grond als een soort route. Je komt in het midden van het bos aan. Het is donker en je kunt niet ver zien. Je vader zegt dat hij even iets gaat halen en dat jullie hier moeten blijven. Jullie gaan zitten op de grond en wachten even. Je vader lijkt niet terug te komen, wat doe je? Keuzes: blijven zitten en wachten, je spoor terug volgen. """,
     "choices": {
         "blijven zitten en wachten": "blijven",
-        "spoor terug volgen": "spoor brood"
+        "je spoor terug volgen": "spoor brood"
         }},
     
     "blaadjes": {
@@ -27,32 +45,32 @@ Je wordt weg gebracht naar het midden van het bos. Neem je iets mee? Keuzes: bro
         },
     
     "leeg": {
-    "text": """Je loopt achter je vader aan. Je komt in het midden van het bos aan. Het is donker en je kunt niet ver zien. Je vader zegt dat hij even iets gaat halen en dat jullie hier moeten blijven. Jullie gaan zitten op de grond en wachten even. Je vader lijkt niet terug te komen, wat doe je? Keuzes: blijven zitten en wachten, opzoek gaan naar mensen. """,
+    "text": """Je loopt achter je vader aan. Je komt in het midden van het bos aan. Het is donker en je kunt niet ver zien. Je vader zegt dat hij even iets gaat halen en dat jullie hier moeten blijven. Jullie gaan zitten op de grond en wachten even. Je vader lijkt niet terug te komen, wat doe je? Keuzes: blijven zitten en wachten, opzoek naar mensen. """,
     "choices": {
         "blijven zitten en wachten": "blijven",
         "opzoek naar mensen": "mensen"
         },
     
     "blijven": {
-    "text": """De nacht is aan gebroken en je maakt een vuurtje met je broertjes om warm te blijven. Je valt inslaap. De volgende ochtend als je wakker wordt is je vader er nog steeds niet. Wat doe je? Keuzes: blijven wachten, je spoor terug volgen.""",
+    "text": """De nacht is aan gebroken en je maakt een vuurtje met je broertjes om warm te blijven. Je valt inslaap. De volgende ochtend als je wakker wordt is je vader er nog steeds niet. Wat doe je? Keuzes: blijven zitten en wachten, spoor terug volgen.""",
     "choices": {
         "blijven zitten en wachten": "blijven",
         "spoor terug volgen": "spoor blaadjes"
         },
     }
     "spoor brood": {
-    "text": """De eerste paar stukjes brood zie je al op de grond liggen. Maar als je een maal op weg bent kun je de stukjes niet meer op de grond vinden. Ze zijn op gegeten door de dieren in het bos. Je bent verdwaald. Wat doe je? Keuzes: Terug lopen naar waar je vandaan komt, op zoek gaan naar andere mensen. """,
+    "text": """De eerste paar stukjes brood zie je al op de grond liggen. Maar als je een maal op weg bent kun je de stukjes niet meer op de grond vinden. Ze zijn op gegeten door de dieren in het bos. Je bent verdwaald. Wat doe je? Keuzes: Terug lopen naar waar je vandaan komt, op zoek naar mensen. """,
     "choices": {
         "terug lopen naar waar je vandaan komt": "terug",
-        "andere mensen zoeken": "mensen"
+        "opzoek naar mensen": "mensen"
         },
     }
     
     "spoor blaadjes": {
-    "text": """Het is herfst en dus liggen er een hele hoop blaadjes op de grond. Je raakt verward en weet niet meer welke blaadjes jij hebt laten vallen. Je bent verdwaald. Wat doe je? Keuzes: Terug lopen naar waar je vandaan komt, op zoek gaan naar andere mensen. """,
+    "text": """Het is herfst en dus liggen er een hele hoop blaadjes op de grond. Je raakt verward en weet niet meer welke blaadjes jij hebt laten vallen. Je bent verdwaald. Wat doe je? Keuzes: Terug lopen naar waar je vandaan komt, op zoek naar mensen. """,
     "choices": {
         "terug lopen naar waar je vandaan komt": "blijven",
-        "andere mensen zoeken": "mensen"
+        "opzoek naar mensen": "mensen"
         },
     }
     
@@ -80,9 +98,9 @@ Je wordt weg gebracht naar het midden van het bos. Neem je iets mee? Keuzes: bro
     }
     
     "niet bes": {
-    "text": """Je hebt nog steeds honger dus je gaat opzoek naar iets anders te eten maar kunt niks vinden. Wat doe je? Keuzes: Je zoekt mensen, je loopt rond""",
+    "text": """Je hebt nog steeds honger dus je gaat opzoek naar iets anders te eten maar kunt niks vinden. Wat doe je? Keuzes: opzoek naar mensen, je loopt rond""",
     "choices": {
-        "ander mensen zoeken": "mensen",
+        "opzoek naar mensen": "mensen",
         "rond lopen": "rondlopen"
         },
     }
@@ -120,20 +138,3 @@ Je wordt weg gebracht naar het midden van het bos. Neem je iets mee? Keuzes: bro
         },
     }
     }}}
-
-staat = "begin"
-while True: 
-    print(dictio[staat])
-    for i in dictio[staat]["choices"]:
-        print(i)
-    keuze = input("Waar wil je heen?")
-    staat = inputcheck(keuze, dictio["staat1"]["choices"])
-    if keuze == "bes" or keuze == "raam" or keuze == "deur" or keuze == "rondlopen":
-        break
-    
-        
-
-
-
-
-     
