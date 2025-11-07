@@ -129,19 +129,16 @@ def inputcheck(inp, keuzes):
     
 staat = 'begin'
 
-while True: 
-    print(dictio[staat])
+while True:
+    print(dictio[staat]["text"])
     for i in dictio[staat]["choices"]:
         print(i)
-    keuze = input("Waar wil je heen?")
-    if keuze == "bes" or keuze == "raam" or keuze == "deur" or keuze == "rondlopen":
-        break
-
-richting = None
-opties ={"brood","blaadjes","niks", "blijven zitten en wachten", "spoor terug volgen", "je spoor terug volgen", "opzoek naar mensen", "terug lopen naar waar je vandaan kwam", "je klopt aan bij het huis", "je loopt verder", "eet de bes", "eet de bes niet", "rond lopen", "naar het huisje", "door het raam", "door de deur"}
-while richting == None:
-    richting = input("Waar ga je heen?").lower
-    if richting not in opties:
-        richting = None
-print(richting)
+    richting = None
+    
+    while richting == None:
+        richting = input("Waar ga je heen?").lower()
+    print(richting)
+    staat = inputcheck(richting,dictio[staat]["choices"])
+    print(staat)
+   
     
