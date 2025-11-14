@@ -174,7 +174,26 @@ while True:
             richting == DOOD
             
     while richting == None:
-        richting = input("Waar ga je heen?").lower()
+        richting = input("Waar ga je heen?").lower().strip()
     staat = inputcheck(richting, dictio[staat]["choices"])
-    if staat == "deur" or staat== "bes" or staat == "raam" or staat == "rondlopen":
+    
+    if staat == "deur":
+        print("""Je probeert de deur in te trappen maar de deur is te sterk.
+    De vrouw ziet je en stopt je in een kooi, de sleutel gooit ze in een ijzeren pot boven het vuur.
+    De sleutel smelt. Je zit hier vast. Je blijf hier voor de rest van je leven zitten.""")
+        break
+    
+    if staat== "bes":
+        print("""De bes is giftig, je wordt er ziek van. Je hebt geen toegang tot een dokter of tegengif dus je gaat dood.""")
+        break
+    
+    if staat == "raam":
+        print("""Het raam staat op een kier en je probeert je er tussen te wurmen.
+    Het is moeilijk maar je komt er door heen. Je komt aan de andere kant van het huisje uit en je ziet een ander licht van een dorpje.
+    Daar loop je naar toe. Je vindt een herberg en kan hier slapen. Je start een nieuw leven. Je leeft nog lang en gelukkig.""")
+        break
+    
+    if staat == "rondlopen":
+        print("""Je kunt geen eten vinden en je energie is op. Je valt neer en ligt op de grond.
+    Je kunt niet overeind komen en gaat dood.""")
         break 
