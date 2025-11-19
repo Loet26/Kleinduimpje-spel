@@ -16,7 +16,8 @@ dictio = {
         "text": """Je scheurt stukjes brood af terwijl je aan het lopen bent, ze vallen op de grond als een soort route.
     Je komt in het midden van het bos aan. Het is donker en je kunt niet ver zien.
     Je vader zegt dat hij even iets gaat halen en dat jullie hier moeten blijven.
-    Jullie gaan zitten op de grond en wachten even. Je vader lijkt niet terug te komen. Je kunt blijven zitten en wachten of je spoor terug volgen, wat doe je? """,
+    Jullie gaan zitten op de grond en wachten even. Je vader lijkt niet terug te komen.
+    Je kunt blijven zitten en wachten of je spoor terug volgen, wat doe je? """,
         "choices": {
             "wachten": "blijven",
             "spoor": "spoor brood"
@@ -27,7 +28,8 @@ dictio = {
         "text": """Je pakt snel een hand vol met gevallen blaadjes en stopt die in je zak.
     Je laat ze vallen op de grond terwijl je achter je vader aanloopt. Je komt in het midden van het bos aan.
     Het is donker en je kunt niet ver zien. Je vader zegt dat hij even iets gaat halen en dat jullie hier moeten blijven.
-    Jullie gaan zitten op de grond en wachten even. Je vader lijkt niet terug te komen. Je kunt blijven zitten en wachten of je spoor terug volgen, wat doe je?""",
+    Jullie gaan zitten op de grond en wachten even. Je vader lijkt niet terug te komen.
+    Je kunt blijven zitten en wachten of je spoor terug volgen, wat doe je?""",
         "choices": {
             "wachten": "blijven",
             "spoor": "spoor blaadjes"
@@ -37,7 +39,8 @@ dictio = {
     "leeg": {
         "text": """Je loopt achter je vader aan. Je komt in het midden van het bos aan.
     Het is donker en je kunt niet ver zien. Je vader zegt dat hij even iets gaat halen en dat jullie hier moeten blijven.
-    Jullie gaan zitten op de grond en wachten even. Je vader lijkt niet terug te komen. Je kunt blijven zitten en wachten of opzoek gaan naar mensen, wat doe je?""",
+    Jullie gaan zitten op de grond en wachten even. Je vader lijkt niet terug te komen.
+    Je kunt blijven zitten en wachten of opzoek gaan naar mensen, wat doe je?""",
         "choices": {
             "wachten": "blijven",
             "opzoek": "mensen"
@@ -45,7 +48,8 @@ dictio = {
         },
     "blijven": {
         "text": """De nacht is aan gebroken en je maakt een vuurtje met je broertjes om warm te blijven.
-    Je valt inslaap. De volgende ochtend als je wakker wordt is je vader er nog steeds niet. Je kunt blijven zitten en wachten of je spoor terug volgen, wat doe je?""",
+    Je valt inslaap. De volgende ochtend als je wakker wordt is je vader er nog steeds niet.
+    Je kunt blijven zitten en wachten of je spoor terug volgen, wat doe je?""",
         "choices": {
             "wachten": "blijven",
             "spoor": "spoor blaadjes"
@@ -54,7 +58,8 @@ dictio = {
     "spoor brood": {
         "text": """De eerste paar stukjes brood zie je al op de grond liggen.
     Maar als je een maal op weg bent kun je de stukjes niet meer op de grond vinden.
-    Ze zijn op gegeten door de dieren in het bos. Je bent verdwaald. Je kunt terug lopen naar waar je vandaan komt of opzoek gaan naar mensen, wat doe je?""",
+    Ze zijn op gegeten door de dieren in het bos. Je bent verdwaald.
+    Je kunt terug lopen naar waar je vandaan komt of opzoek gaan naar mensen, wat doe je?""",
         "choices": {
             "terug lopen": "terug",
             "opzoek": "mensen"
@@ -82,7 +87,8 @@ dictio = {
         },
     
     "terug": {
-        "text": """Je vind de plek terug waar je hebt geslapen. Je hebt honger je ziet een bos met bessen. Je kunt de bes eten of niet eten, wat doe je?""",
+        "text": """Je vind de plek terug waar je hebt geslapen. Je hebt honger je ziet een bos met bessen.
+    Je kunt de bes eten of niet eten, wat doe je?""",
         "choices": {
             "eet": "bes",
             "niet": "niet bes"
@@ -144,7 +150,7 @@ dictio = {
         },
     
     "deur": {
-        "text": """Je probeert de deur in te trappen maar de deur is te sterk.
+        "text": """Je probeert de deur in te trappen maar de deur is zo sterk dat het niet lukt.
     De vrouw ziet je en stopt je in een kooi, de sleutel gooit ze in een ijzeren pot boven het vuur.
     De sleutel smelt. Je zit hier vast. Je blijf hier voor de rest van je leven zitten.""",
         "choices": {
@@ -158,25 +164,25 @@ def inputcheck(inp, keuzes):
         return keuzes[inp]
     
 staat = 'begin'
+wacht_counter = 0 
 
 while True:
-    wacht_counter = 0
             
     print(dictio[staat]["text"])
     for i in dictio[staat]["choices"]:
         print(i)
     richting = None
-    
-    if richting == "wachten":
-        wacht_counter += 1
-        if wacht_counter > 4:
-            print("Je hebt al 5 dagen geen eten of drinken gehad dus je gaat dood")
-            richting == DOOD
             
     while richting == None:
         richting = input("Waar ga je heen?").lower().strip()
     staat = inputcheck(richting, dictio[staat]["choices"])
     
+    if richting == "wachten":
+        wacht_counter += 1
+        if wacht_counter >= 5:
+            print("Je hebt al 5 dagen geen eten of drinken gehad dus je gaat dood")
+            break
+        
     if staat == "deur":
         print("""Je probeert de deur in te trappen maar de deur is te sterk.
     De vrouw ziet je en stopt je in een kooi, de sleutel gooit ze in een ijzeren pot boven het vuur.
