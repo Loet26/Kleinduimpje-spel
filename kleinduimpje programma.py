@@ -1,10 +1,18 @@
+rood = "\033[31m"
+groen = "\033[32m"
+geel = "\033[33m"
+blauw = "\033[34m"
+paars = "\033[35m"
+cyan = "\033[36m"
+
+
 dictio = {
     "begin":{
-        "text": """Kleinduimpje woont samen met zijn broertjes in het bos.
+        "text": f"""{rood} Kleinduimpje woont samen met zijn broertjes in het bos.
     Omdat er te weinig eten is thuis, worden ze in het bos achtergelaten.
     Kleinduimpje heeft gelukkig witte steentjes in zijn zak zitten die hij op de route achterlaat waardoor hij weer terug komt.
     Ze komen terug thuis, maar hun ouders willen hen weg hebben dus brengt de vader ze nog een keer weg. 
-    Je wordt weg gebracht naar het midden van het bos. Neem je iets mee? """, 
+    Je wordt weg gebracht naar het midden van het bos. Neem je iets mee? }}""", 
         "choices": {
             "brood": "brood stukjes",
             "blaadjes": "blaadjes",
@@ -13,7 +21,7 @@ dictio = {
         },
     
     "brood stukjes": {
-        "text": """Je scheurt stukjes brood af terwijl je aan het lopen bent, ze vallen op de grond als een soort route.
+        "text": f"""{geel}Je scheurt stukjes brood af terwijl je aan het lopen bent, ze vallen op de grond als een soort route.
     Je komt in het midden van het bos aan. Het is donker en je kunt niet ver zien.
     Je vader zegt dat hij even iets gaat halen en dat jullie hier moeten blijven.
     Jullie gaan zitten op de grond en wachten even. Je vader lijkt niet terug te komen.
@@ -25,7 +33,7 @@ dictio = {
         },
     
     "blaadjes": {
-        "text": """Je pakt snel een hand vol met gevallen blaadjes en stopt die in je zak.
+        "text": f"""{groen}Je pakt snel een hand vol met gevallen blaadjes en stopt die in je zak.
     Je laat ze vallen op de grond terwijl je achter je vader aanloopt. Je komt in het midden van het bos aan.
     Het is donker en je kunt niet ver zien. Je vader zegt dat hij even iets gaat halen en dat jullie hier moeten blijven.
     Jullie gaan zitten op de grond en wachten even. Je vader lijkt niet terug te komen.
@@ -37,7 +45,7 @@ dictio = {
         },
     
     "leeg": {
-        "text": """Je loopt achter je vader aan. Je komt in het midden van het bos aan.
+        "text": f"""{paars}Je loopt achter je vader aan. Je komt in het midden van het bos aan.
     Het is donker en je kunt niet ver zien. Je vader zegt dat hij even iets gaat halen en dat jullie hier moeten blijven.
     Jullie gaan zitten op de grond en wachten even. Je vader lijkt niet terug te komen.
     Je kunt blijven zitten en wachten of opzoek gaan naar mensen, wat doe je?""",
@@ -47,7 +55,7 @@ dictio = {
             }
         },
     "blijven": {
-        "text": """De nacht is aan gebroken en je maakt een vuurtje met je broertjes om warm te blijven.
+        "text": f"""{geel}De nacht is aan gebroken en je maakt een vuurtje met je broertjes om warm te blijven.
     Je valt inslaap. De volgende ochtend als je wakker wordt is je vader er nog steeds niet.
     Je kunt blijven zitten en wachten of je spoor terug volgen, wat doe je?""",
         "choices": {
@@ -56,7 +64,7 @@ dictio = {
             }
         },
     "spoor brood": {
-        "text": """De eerste paar stukjes brood zie je al op de grond liggen.
+        "text": f"""{geel}De eerste paar stukjes brood zie je al op de grond liggen.
     Maar als je een maal op weg bent kun je de stukjes niet meer op de grond vinden.
     Ze zijn op gegeten door de dieren in het bos. Je bent verdwaald.
     Je kunt terug lopen naar waar je vandaan komt of opzoek gaan naar mensen, wat doe je?""",
@@ -67,7 +75,7 @@ dictio = {
         },
     
     "spoor blaadjes": {
-        "text": """Het is herfst en dus liggen er een hele hoop blaadjes op de grond.
+        "text": f"""{groen}Het is herfst en dus liggen er een hele hoop blaadjes op de grond.
     Je raakt verward en weet niet meer welke blaadjes jij hebt laten vallen. Je bent verdwaald.
     Je kunt terug lopen naar waar je vandaan komt of opzoek gaan naar mensen, wat doe je?""",
         "choices": {
@@ -77,7 +85,7 @@ dictio = {
         },
         
     "mensen": {
-        "text": """Na een paar uur ronddwalen in het bos zie je in de verte een lichtje.
+        "text": f"""{paars}Na een paar uur ronddwalen in het bos zie je in de verte een lichtje.
     Je volgt de route naar het licht en ziet een huisje staan. Je hoort stemmen uit het huisje komen;
     er zijn mensen thuis! Je kunt aankloppen bij het huis of verder lopen, wat doe je? """,
         "choices": {
@@ -87,7 +95,7 @@ dictio = {
         },
     
     "terug": {
-        "text": """Je vind de plek terug waar je hebt geslapen. Je hebt honger je ziet een bos met bessen.
+        "text": f"""{blauw}Je vind de plek terug waar je hebt geslapen. Je hebt honger je ziet een bos met bessen.
     Je kunt de bes eten of niet eten, wat doe je?""",
         "choices": {
             "eet": "bes",
@@ -96,14 +104,14 @@ dictio = {
         },
     
     "bes": {
-        "text": """De bes is giftig, je wordt er ziek van. Je hebt geen toegang tot een dokter of tegengif dus je gaat dood.""",
+        "text": f"""{blauw}De bes is giftig, je wordt er ziek van. Je hebt geen toegang tot een dokter of tegengif dus je gaat dood.""",
         "choices": {
            
             }
         },
     
     "niet bes": {
-        "text": """Je hebt nog steeds honger dus je gaat opzoek naar iets anders te eten maar kunt niks vinden.
+        "text": f"""{cyan}Je hebt nog steeds honger dus je gaat opzoek naar iets anders te eten maar kunt niks vinden.
     Je kunt opzoek naar mensen of verder rond lopen, wat doe je? """,
         "choices": {
             "opzoek": "mensen",
@@ -112,7 +120,7 @@ dictio = {
         },
     
     "rondlopen": {
-        "text": """Je kunt geen eten vinden en je energie is op. Je valt neer en ligt op de grond.
+        "text": f"""{cyan}Je kunt geen eten vinden en je energie is op. Je valt neer en ligt op de grond.
     Je kunt niet overeind komen en gaat dood.""",
         "choices": {
            
@@ -120,7 +128,7 @@ dictio = {
         },
     
     "verder": {
-        "text": """Je dwaalt door het bos maar ziet niks anders. Je weet wel de weg naar waar je vandaan kwam en het huisje.
+        "text": f"""{cyan}Je dwaalt door het bos maar ziet niks anders. Je weet wel de weg naar waar je vandaan kwam en het huisje.
     Je kunt naar het huisje toe lopen of terug gaan naar waar je vandaan kwam, wat doe je?""",
         "choices": {
             "huisje": "huisje",
@@ -129,7 +137,7 @@ dictio = {
         },
     
     "aankloppen": {
-        "text": """Je klopt aan en een oud vrouwtje doet de deur open. Ze nodigt je uit voor een kopje thee.
+        "text": f"""{rood}Je klopt aan en een oud vrouwtje doet de deur open. Ze nodigt je uit voor een kopje thee.
     Je loopt naar binnen en hoort de deur achter je in het slot vallen.
     Je gaat aan de tafel zitten en de vrouw zet een kopje voor je neer.
     Je kijkt rond in het huisje en ziet allemaal kooien, je voelt je niet op je gemak.
@@ -141,7 +149,7 @@ dictio = {
             }
         },
     "raam": {
-        "text": """Het raam staat op een kier en je probeert je er tussen te wurmen.
+        "text": f"""{rood}Het raam staat op een kier en je probeert je er tussen te wurmen.
     Het is moeilijk maar je komt er door heen. Je komt aan de andere kant van het huisje uit en je ziet een ander licht van een dorpje.
     Daar loop je naar toe. Je vindt een herberg en kan hier slapen. Je start een nieuw leven. Je leeft nog lang en gelukkig.""",
         "choices": {
@@ -150,7 +158,7 @@ dictio = {
         },
     
     "deur": {
-        "text": """Je probeert de deur in te trappen maar de deur is zo sterk dat het niet lukt.
+        "text": """f{blauw} Je probeert de deur in te trappen maar de deur is zo sterk dat het niet lukt.
     De vrouw ziet je en stopt je in een kooi, de sleutel gooit ze in een ijzeren pot boven het vuur.
     De sleutel smelt. Je zit hier vast. Je blijf hier voor de rest van je leven zitten.""",
         "choices": {
@@ -164,7 +172,7 @@ def inputcheck(inp, keuzes):
         return keuzes[inp]
     
 staat = 'begin'
-wacht_counter = 0 
+wacht_counter = 0
 
 while True:
             
@@ -184,22 +192,22 @@ while True:
             break
         
     if staat == "deur":
-        print("""Je probeert de deur in te trappen maar de deur is te sterk.
+        print(f"""{blauw} Je probeert de deur in te trappen maar de deur is te sterk.
     De vrouw ziet je en stopt je in een kooi, de sleutel gooit ze in een ijzeren pot boven het vuur.
     De sleutel smelt. Je zit hier vast. Je blijf hier voor de rest van je leven zitten.""")
         break
     
     if staat== "bes":
-        print("""De bes is giftig, je wordt er ziek van. Je hebt geen toegang tot een dokter of tegengif dus je gaat dood.""")
+        print(f"""{blauw} De bes is giftig, je wordt er ziek van. Je hebt geen toegang tot een dokter of tegengif dus je gaat dood.""")
         break
     
     if staat == "raam":
-        print("""Het raam staat op een kier en je probeert je er tussen te wurmen.
+        print(f"""{rood} Het raam staat op een kier en je probeert je er tussen te wurmen.
     Het is moeilijk maar je komt er door heen. Je komt aan de andere kant van het huisje uit en je ziet een ander licht van een dorpje.
     Daar loop je naar toe. Je vindt een herberg en kan hier slapen. Je start een nieuw leven. Je leeft nog lang en gelukkig.""")
         break
     
     if staat == "rondlopen":
-        print("""Je kunt geen eten vinden en je energie is op. Je valt neer en ligt op de grond.
+        print("""{cyan} Je kunt geen eten vinden en je energie is op. Je valt neer en ligt op de grond.
     Je kunt niet overeind komen en gaat dood.""")
         break 
