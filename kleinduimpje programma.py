@@ -76,7 +76,7 @@ dictio = {
     
     "spoor blaadjes": {
         "text": f"""{groen}Het is herfst en dus liggen er een hele hoop blaadjes op de grond.
-    Je raakt verward en weet niet meer welke blaadjes jij hebt laten vallen. Je bent verdwaald.
+    Je raakt verward en weet niet meer welke jij hebt laten vallen. Je bent verdwaald.
     Je kunt terug lopen naar waar je vandaan komt of opzoek gaan naar mensen, wat doe je?""",
         "choices": {
             "terug lopen": "blijven",
@@ -95,7 +95,7 @@ dictio = {
         },
     
     "terug": {
-        "text": f"""{blauw}Je vind de plek terug waar je hebt geslapen. Je hebt honger je ziet een bos met bessen.
+        "text": f"""{blauw}Je vind de plek terug waar je hebt geslapen. Je hebt honger en je ziet een bos met bessen.
     Je kunt de bes eten of niet eten, wat doe je?""",
         "choices": {
             "eet": "bes",
@@ -208,6 +208,6 @@ while True:
         break
     
     if staat == "rondlopen":
-        print("""{cyan} Je kunt geen eten vinden en je energie is op. Je valt neer en ligt op de grond.
+        print(f"""{cyan} Je kunt geen eten vinden en je energie is op. Je valt neer en ligt op de grond.
     Je kunt niet overeind komen en gaat dood.""")
         break 
